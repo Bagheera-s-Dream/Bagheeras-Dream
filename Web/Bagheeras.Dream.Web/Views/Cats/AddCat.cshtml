@@ -1,0 +1,89 @@
+﻿@using Bagheeras.Dream.Web.ViewModels.Cats;
+@using Bagheeras.Dream.Data.Models.Enums;
+
+@model CatInputModel
+
+<div class="row">
+    <div class="col-md-12">
+        <h1 style="text-align: center; color: lightgray">Add a new cat</h1>
+        <form class="mx-auto half-width col-5" enctype="multipart/form-data" method="post" asp-controller="Cats" asp-action="AddCat">
+            <div class="top-border-line primary-separator"></div>
+
+            <div class="form-group">
+                <label asp-for="Name" class="suls-text-color">Name</label>
+                <input asp-for="Name" class="form-control" placeholder="Name...">
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Age" class="suls-text-color">Age</label>
+                <input asp-for="Age" type="number" class="form-control" placeholder="Age...">
+                <span asp-validation-for="Age" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Birthday" class="suls-text-color">Birthday</label>
+                <input asp-for="Birthday" type="date" class="form-control" placeholder="Birthday...">
+                <span asp-validation-for="Birthday" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label class="suls-text-color">Region</label>
+                <select asp-for="Gender" class="form-control">
+                    <option value="@Gender.Male">
+                        Male
+                    </option>
+                    <option value="@Gender.Female">
+                        Female
+                    </option>
+                </select>
+                <span asp-validation-for="Gender" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label class="suls-text-color">Region</label>
+                <select asp-for="Breed" class="form-control">
+                    <option value="@Breed.British_Shorthair">
+                        British Shorthair
+                    </option>
+                </select>
+                <span asp-validation-for="Breed" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label class="suls-text-color">Region</label>
+                <select asp-for="Color" class="form-control">
+                    <option value="@Color.Gray">
+                        Gray
+                    </option>
+                    <option value="@Color.Lilac">
+                        Lilac
+                    </option>
+                </select>
+                <span asp-validation-for="Color" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="ProfileImage" class="suls-text-color">ProfileImage</label>
+                <input asp-for="ProfileImage" class="form-control">
+                <span asp-validation-for="ProfileImage" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="FatherName" class="suls-text-color">Fathers's Name</label>
+                <input asp-for="FatherName" class="form-control" placeholder="Празно ако няма, трябва да е едно към едно с това което е записан...">
+                <span asp-validation-for="FatherName" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="MotherName" class="suls-text-color">Mother's Name</label>
+                <input asp-for="MotherName" class="form-control" placeholder="Празно ако няма, трябва да е едно към едно с това което е записана...">
+                <span asp-validation-for="MotherName" class="text-danger"></span>
+            </div>
+
+            <div class="top-border-line primary-separator"></div>
+
+            <button type="submit" class="btn forum-add-bg-color">Post!</button>
+        </form>
+    </div>
+</div>

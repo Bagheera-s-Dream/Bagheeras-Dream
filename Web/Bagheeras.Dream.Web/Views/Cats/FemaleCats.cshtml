@@ -1,0 +1,26 @@
+﻿@using Bagheeras.Dream.Web.ViewModels.Cats
+
+@model ICollection<CatViewModel>
+
+<div class="female-cats">
+    <div class="title">
+        <h1>
+            Female Cats
+        </h1>
+    </div>
+    <div class="row tm-mb-90 tm-gallery">
+        @foreach (CatViewModel cat in Model)
+        {
+            <div class="col-xl-4 col-lg-4 col-md-7 col-sm-8 col-12 mb-5">
+                <figure class="effect-ming tm-video-item">
+                    <img class="img-fluid main-photo" src="~/catImages/@cat.ProfileImage" />
+                    <figcaption class="d-flex align-items-center justify-content-center">
+                        <h2>@cat.Name</h2>
+                        <a href="/Cats/Cat?catId=@cat.CatId"></a>
+                    </figcaption>
+                </figure>
+
+            </div>
+        }
+    </div>
+</div>
